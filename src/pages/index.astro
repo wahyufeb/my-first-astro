@@ -1,0 +1,58 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <h1>Hi <span class="text-gradient">Patchamon</span></h1>
+    <Card
+      title="Buat Aplikasi SPA pertamamu"
+      href="www.facebook.com"
+      body="Membuat aplikasi SPA (Single Page Application) pertamamu menggunakan framework Javascript yaitu Vue.js"
+    />
+    <Card
+      title="Berkenalan dengan Astro"
+      href="www.facebook.com"
+      body="Astro merupakan framework yang digunakan untuk membuat website dengan cepat yang lebih mengutamakan kepada content website"
+    />
+    <Card
+      title="Berkenalan dengan Vue 3"
+      href="www.facebook.com"
+      body="Berkenalan dengan Vue 3, Vue 3 merupakan framework yang digunakan untuk membuat aplikasi SPA (Single Page Application), pada Vue 3 tidak lagi menggunakan konsep options API (walaupun masih bisa dijalankan) tetapi menggunakan Composition API"
+    />
+  </main>
+</Layout>
+
+<style>
+  :root {
+    --astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+  }
+
+  main {
+    margin: auto;
+    padding: 1em;
+    max-width: 60ch;
+  }
+
+  .text-gradient {
+    font-weight: 900;
+    background-image: var(--astro-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      background-position-y: 0%;
+    }
+    50% {
+      background-position-y: 80%;
+    }
+  }
+</style>
